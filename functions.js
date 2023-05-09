@@ -11,7 +11,8 @@ const functions = {
     },
     addNum: (num1, num2) => num1 + num2,
     isNull: () => null,
-    isUndefined: () => undefined
+    isUndefined: () => undefined,
+    myStringCapitalised: (myString) => myString.toUpperCase()
 }
 
 module.exports = functions
