@@ -30,6 +30,10 @@ toThrowError
 toStrictEqual
 */
 
+test('contains string', () => {
+    expect(functions.myStringCapitalised("this is a test!")).toContain("TEST");
+})
+
 test('object assignment', () => {
     const data = {one: 1};
     data['two'] = 2;
