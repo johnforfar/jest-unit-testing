@@ -1,4 +1,4 @@
-const getPeople = require('./script');
+const {getPeople, isCity} = require('./script');
 const fetch = require('node-fetch');
 
 test('calls Swapi API to get peopl with a promise', async () => {
@@ -37,4 +37,16 @@ test('test get people with dependency injection', async () => {
     expect(mockFetch).toBeCalled();
     expect(mockFetch).toBeCalledWith('https://swapi.dev/api/films/1/');
     expect(data.title).toContain("A New Hope");
+})
+
+let db = [];
+const initDB = () => db = ['Sydney', 'Vienna', 'New York'];
+const closeDB = () => db = [];
+beforeEach(() => initDB());
+afterEach(() => closeDB());
+//beforeAll(() => initDB());
+//afterAll(() => closeDB());
+
+test('city database has Vienna', () => {
+    expect(isCity('Vienna', db)).toBeTruthy();
 })

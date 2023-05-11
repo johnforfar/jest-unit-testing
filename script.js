@@ -13,4 +13,8 @@ const getPeople = async () => {
     }
 }
 
-module.exports = getPeople;
+const isCity = (city, db) => {
+    return db.includes(city);
+}
+
+module.exports = { getPeople, isCity };
