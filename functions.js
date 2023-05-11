@@ -12,7 +12,10 @@ const functions = {
     addNum: (num1, num2) => num1 + num2,
     isNull: () => null,
     isUndefined: () => undefined,
-    myStringCapitalised: (myString) => myString.toUpperCase()
+    myStringCapitalised: (myString) => myString.toUpperCase(),
+    compileAndroidCode: () => {
+        throw new Error('you are using the wrong JDK');
+    }
 }
 
 module.exports = functions

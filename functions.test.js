@@ -76,3 +76,20 @@ test('adding floating point numbers', () => {
 test('there is no I in team', () => {
     expect('team').not.toMatch(/I/);
 })
+
+test('the shopping list', () => {
+    const shoppingList = [
+        'nappies',
+        'tissues',
+        'rubbish bags',
+        'paper towels',
+        'beer'
+    ];
+    expect(shoppingList).toContain('beer');
+    expect(new Set(shoppingList)).toContain('beer');
+})
+
+test('compiling android goes as expected', () => {
+    expect(functions.compileAndroidCode).toThrow();
+    expect(functions.compileAndroidCode).toThrow(/JDK/);
+})
