@@ -1,14 +1,11 @@
 const getPeople = require('./script');
 const fetch = require('node-fetch');
 
-test('calls Swapi API to get peopl with a promise', () => {
- expect.assertions(1);
- return getPeople(fetch)
- .then(data => {
- expect(data.title).toContain("A New Hope");
- //expect(data.count).not.toEqual(69);
- })
-})
+test('calls Swapi API to get peopl with a promise', async () => { // added async keyword
+    expect.assertions(1);
+    const data = await getPeople(fetch); // added await keyword
+    expect(data.title).toContain("A New Hope");
+  })
 
 test('testing captured calls', () => {
  const mock = jest.fn();
